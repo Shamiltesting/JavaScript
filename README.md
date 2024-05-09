@@ -1,2 +1,2 @@
 # JavaScript-
-The tutorial for QA Engineers who want to learn the programming language as JavaScript. Here you can learn the basics of programming and also specific info for automatization testing on js. Enjoy!
+This tutorial is designed for QA Engineers who are interested in learning the programming language JavaScript. Here, you'll delve into the fundamentals of programming and find specialized information for automated testing using JavaScript. Enjoy!
