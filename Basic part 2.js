@@ -178,14 +178,14 @@ if (digit === 10) {
     let number = 3;//Если зададим переменную через "let" выведет ошибку 
     number += 5;
 }
-console.log( number);
+console.log(number);
 
 let digit = 10;
 if (digit === 10) {
     var number = 3;//Если зададим переменную через "var", то выведет значения переменной
     number += 5;
 }
-console.log( number);*/
+console.log(number);*/
 
 //Для того чтобы переменная объявляемая через "let" выводило без ошибки, надо объявить переменную в не блока(скоупа):
 /*let digit = 10;
@@ -193,5 +193,5 @@ let number = 3
 if (digit === 10) {
     number += 5;
 }
-console.log( number);*/
+console.log(number);*/
 
