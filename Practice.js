@@ -48,10 +48,12 @@ triangle(5, "*")
 
 //Вывести на экран сумму чисел от 1 до 100 включительно, не кратных 3://
 
-
-for (var i = 1; i < 20; i++){
-    for (var j = 0; j <= i; j++) 
-        console.log("Выведи число = " +  (i + j));
+var result = 0;
+for (var i = 1; i <= 100; i++) {
+    if (i % 3  && i !== 0) continue; {
+    result += i;
     }
+}
+console.log(result);
 
 
