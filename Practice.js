@@ -3,24 +3,31 @@
 //Год получать через prompt(). Проверить, что пользователь ввел число и это число не является отрицательным
 
 let digitInput = +prompt("Введите возраст");
-if (digitInput  >= 2 || digitInput != 5 || digitInput >= 22 ||digitInput === 24 ) {
-    console.log(digitInput + " роки");
-} else if (digitInput >= 5 || digitInput >= 25 || digitInput === 30) {
-    console.log(digitInput + " років");
-} else {
+if (digitInput % 10) {
     console.log(digitInput + " рік");
+} else if (digitInput % 2 ) {
+    console.log(digitInput + " роки");
+} else {
+    console.log(digitInput + " років");
 }
 
+console.log(4 % 2);
+console.log(true == 2);
 
-
+let digitInput = +prompt("Введите возраст");
+if (digitInput % 100) {
+    console.log(digitInput + " рік");
+} else {
+    console.log(digitInput + " что то другое")
+}
 
 // Задача 3: Напишите программу на JavaScript, которая принимает число от пользователя и определяет, является ли введенное число четным или нечетным.
 
 let userDigit = 701;
 if (userDigit % 2 === 0) {
-    console.log("Чило " + userDigit + " - парное");
+    console.log("Чиcло " + userDigit + " - парное");
 } else {
-    console.log("Чило " + userDigit + " - непарное");
+    console.log("Чиcло " + userDigit + " - непарное");
 }
 
 
