@@ -113,3 +113,19 @@ function pow(x, y) {
 }
 
 pow(2, 3);
+
+//Задача 8: написать свою реализацию функции isNaN, не используя методы isNaN/ Number.isNaN
+
+function isNaNFunction(a) {
+    if (a <= Infinity || a === " ")  
+        {
+            console.log(false);
+        } 
+    else {
+        console.log(true);
+    }    
+    }
+    isNaNFunction(NaN);
+
+
+    console.log(isNaN("Any text"))
