@@ -120,3 +120,156 @@ console.log(0.3 === s.toFixed(1));//возвращает false потому зн
 console.log(Number.isFinite(s.toFixed()));
 console.log(0.3 === Number.parseFloat(s.toFixed(1)));*/ /*Number.parseFloat функция переводит "string" значение в "nunmber" поэтому у нас тут true. 
 Вместо "Number.parseFloat" мы можем написать "+" и в таком случае также переведет значение в тип "number"*/ 
+
+//Все математические операции в JavaScript выполняются в двоичном виде.
+// Не всякая десятичная дробь, красиво выглядящая в десятичном виде, так же красиво смотрится в бинарном.
+//Способ "повысить точность" вычисления:
+/*var res = (0.1 * 10 + 0.2 * 10) / 10;
+console.log(res);
+console.log("Будет ли 0.3 ? " + (res === 0.3));*/
+
+//Методы string:
+
+//Возможность через знак доллара и фигуные скобочки и косые ковычки по краям текста:
+/*var str = "Текст по умолчанию";
+console.log(`Я должен увидеть ${str}`);*///мы видим что переменная заключенна в ${}
+
+/*
+\b - backspace
+\t - tab
+\n - New line
+\r - Carriage return
+\f - Form feed
+\u00A9 -символ юнікоду
+*/
+
+/*console.log("Попробуй с \b BACKSPACE");
+console.log("Попробуй с \t TAB");
+console.log("Попробуй с \n NEW LINE");
+console.log("Попробуй с \r CARRIAGE RETURN");
+console.log("Попробуй с \f FROM FEED");
+console.log("Попробуй с \u00A9 СИМВОЛ ЮНИКОДА");*/
+
+//Экранирование специальных символов:
+/*var str = "Экранирование символа внутири string.\nЗаключаем слово \"N\" в ковычки";//Экранирование символа внутири строки делатется с помощью обратного слэша(\)
+console.log(str);*/
+
+//lenght - делает подсчет количества сиволов в стрроке:
+/*var str = "ЗДЕСЬ ДОЛЖНО БЫТЬ 20";//Пробелы тоже считаются в досчете
+console.log(str.length);*/
+
+//chartAt - позволяет получить символ по определенному индексу в строке:
+/*var str = "select symbol";
+console.log(`Should appear the \"y\"\n${str.charAt(8)}`);//мы видим, что будет выводится буква "у" со слова "symbol"(str переменная)
+console.log("Should appear the \"y\"\n" + str[8]);*/ //2й способ использования "chartAt"
+
+//Также chartAt выводит буквы с строки и таким образом:
+/*console.log("Should appear the".charAt(1));
+console.log("Should appear the"[1]);*/
+
+//Кейс когда индекс указан привышающий количество буква:
+/*console.log("Should appear the".charAt(20));//выведет пустую строку 
+console.log("Should appear the"[20]);//выведет undefined*/
+
+//repeat - позволяет повторить содержимое строки несколько раз и создать новую строчку:
+/*var str = "Hello";
+console.log(str.repeat(3));*/
+
+//concat - давно известная конкатенация:
+/*var str = "Shamil ";
+console.log(str.concat("Akhmadov"));
+console.log(str.concat("Akhmadov", " QA Engineer"));*/
+
+//endsWith - используется для проверки, заканчивается ли строка заданной подстрокой.
+/*var str = "file.js";
+console.log(str.endsWith("js"));
+console.log(str.endsWith("file"));
+console.log(str.endsWith("differentText"));
+console.log(str.endsWith("js", 7));//параметр, указывающий длину основной строки, которую следует учитывать при поиске.
+console.log(str.endsWith("js", 6));*/ // выведет false так как буква "j" соответсвует 7 индексу
+
+//includes - позволяет проверить, содержится ли определенная подстрока (для строк):
+/*var str = "Shamil Akhmadov";
+console.log(str.includes("Shamil"));
+console.log(str.includes("shamil"));
+console.log(str.includes("Akhmadov", 7));//позицию, с которой начать поиск
+console.log(str.includes("Akhmadov", 9));*/
+
+//indexOf - выводит индекс первой буквы прописанного строки или буквы:
+/*const str = "Hello, world!";
+console.log(str.indexOf("world"));
+console.log(str.indexOf("World")); //если нет совпадений по букве или по регистру, то будет выводить "-1"
+console.log(str.indexOf("o", 2));
+console.log(str.indexOf("o", 9));*/
+
+//lastIndexOf- выводит индекс буквы, которая последняя в стринге
+/*const str = "Hello, world!";
+console.log(str.indexOf("o"));
+console.log(str.lastIndexOf("o"));*/
+
+/*padStart/padEnd - это методы для строк в JavaScript,
+используемые для добавления дополнительных символов
+(обычно пробелы) до начала или конца строки*/
+/*console.log('example'.padStart(8));
+console.log('example'.padEnd(8));
+console.log('example'.padStart(8,'*'));
+console.log('example'.padEnd(8,'*'));
+console.log('example'.padStart(10,'*'));
+console.log('example'.padEnd(10,'*'));*/
+
+//trim, trimStart, trimEnd - це методи для строк, кооторые используються для удаления пробелов.
+/*console.log('   hello'.trimStart());
+console.log('hello   '.trimEnd());
+console.log('  hello  '.trim());*/
+
+//toLowerCase/toUpperCase - это методи для строк, которые используються для смены регистра символа в строке.
+/*var str = "Вот такая странная строка";
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log("И один в поле воин"[3].toUpperCase());//применяется к букве с указанным индексом
+console.log("  Вот таким образом еще можно  ".toUpperCase().trim().concat("!"))*/
+
+//replace -  используется для смены первого определенного подстроки 
+//в исходной строке другой строкой или значением
+//В строке нельзя ничего изменить
+/*var str = "строка";
+console.log("str[4]=" + str[4]);
+str[5] = "F"; //Ошибка
+console.log(str);*/
+//Смотрим что делает "replace":
+/*var str = "Какая-то строка просто для примера";
+var res = str.replace('я', '_');
+console.log(res);
+console.log(str);
+var replaceAll = str.replaceAll('','*');
+console.log(replaceAll);*/
+
+//substring/substr/slice – эти методы позволяют вам вырезать часть строки,
+//указыанный индекс определяет с какой части строки будет вырезать метод.
+//В простейшем случае все три работают одинаково:
+/*var str = "Попробуй вырезать эту букву";
+console.log(str.substr(7));
+console.log(str.substring(7));
+console.log(str.slice(7));*/
+
+//Отрицательный аргумент
+/*var str = "Попробуй вырезать эту букву";
+console.log(str.substr(-9)); //отсчитывает с конца
+console.log(str.substring(-9)); //с нуля
+console.log(str.slice(-9)); //отсчитывает с конца*/
+
+//Второй аргумент
+/*var str = "Попробуй вырезать эту букву";
+console.log(str.substr(10, 14)); //второй аргумент – длина
+console.log(str.substring(10, 14)); //первый аргумент- это "от", второй аргумент – это до
+console.log(str.slice(10, 14));*/ //первый аргумент- это "от", второй аргумент – это до
+
+//А если отрицательное?
+/*var str = "Попробуй вырезать эту букву";
+console.log(str.substring(9, -1)); //-1<9 они меняются местами. Кроме того -1 приводится к 0
+console.log(str.substr(9, -2)); //вообще не понимает отрицательное число, то есть у меня имеет 9 и -2 ничего не имеет - пустая строка
+console.log(str.slice(9, -1));*/ //первая цифра- это с какой буквы начинается отсчет, вторая цифра- отсчет  начинается с конца строки
+
+//Два слова про юникод
+/*console.log(String.fromCharCode("97"));
+console.log("a".charCodeAt(0));*/
