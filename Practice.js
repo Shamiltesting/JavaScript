@@ -129,3 +129,34 @@ function isNaNFunction(a) {
 
 
     console.log(isNaN("Any text"))
+
+    /*Задача 9:  Проверка теории вероятности. Напишите функцию, которая будет генерировать определенное количество случайных чисел в диапазоне от 100 до 1000 включительно. 
+    Подсчитать количество четных и нечетных среди них. Вычислить процентное соотношение – будет ли оно близко к 50%50? 
+    Пример функции checkProbabilityTheory(count). Параметр count будет указывать, сколько раз будет генерироваться случайное число.*/
+
+    function checkProbabilityTheory(count) {
+        var evenDigit = 0;
+        var oddDigit = 0;
+        var percentEvenD = 0;
+        var percentOddD = 0;
+        for(i = 0; i < count; i++) {
+            var rndDigits = Math.floor(Math.random()* 901 + 100);
+
+            if (rndDigits % 2 === 0) {
+                evenDigit++;
+            }
+            else {
+                oddDigit++;
+            } 
+            console.log(rndDigits);
+            percentEvenD = Math.round(evenDigit * 100 / count);
+            percentOddD = Math.round(oddDigit * 100 / count);
+        }
+            return `Total digits: ${count}
+Even digits: ${evenDigit}
+Odd digits: ${oddDigit}
+Even digits= ${percentEvenD}% / Odd digits= ${percentOddD}%`
+        
+        
+    }
+    console.log(checkProbabilityTheory(30));
