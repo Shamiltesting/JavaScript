@@ -299,7 +299,7 @@ switch (hotelName) {
     /*let a = +prompt("Enter digit");
     function calculate () {
         let result = (a + a);
-        return result// мы убрали с функции объявление/инициацию переменной и "console.log", а вместо этого добавили "return", 
+        return result// мы убрали с функции объявление/инициализацию переменной и "console.log", а вместо этого добавили "return", 
         который позволяет вывести переменную с функции и неоднократно использовать переменную
     }
     let result = calculate();
