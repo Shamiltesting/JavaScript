@@ -158,6 +158,10 @@ console.log(str);*/
 /*var str = "ЗДЕСЬ ДОЛЖНО БЫТЬ 20";//Пробелы тоже считаются в досчете
 console.log(str.length);*/
 
+//Еще один пример:
+/*let str2 = "Проверь";
+console.log(str2[str2.length - 1]);*/ //Мы видим, что при таком скрипте код выводит последню букву переменной "str2"
+
 //chartAt - позволяет получить символ по определенному индексу в строке:
 /*var str = "select symbol";
 console.log(`Should appear the \"y\"\n${str.charAt(8)}`);//мы видим, что будет выводится буква "у" со слова "symbol"(str переменная)
@@ -273,3 +277,27 @@ console.log(str.slice(9, -1));*/ //первая цифра- это с какой
 //Два слова про юникод
 /*console.log(String.fromCharCode("97"));
 console.log("a".charCodeAt(0));*/
+
+
+/*Интерполяция
+Интерполяция – это вставка значений в строку. Для осуществления интерполяции используется синтаксис ${...}: */
+/*let name1 = "John";
+let lastName = "Stewart";
+
+let fullName = `Mr. ${name1} ${lastName}`;
+
+console.log(fullName);*/ //'Mr. John Stewart'
+
+//Рассмотрим еще один пример, где покажем разницу между конкатенацией и интерполированием строк:
+/*let name2 = "John";
+let age = 30;
+
+//конкатенация
+let concatenationGreeting = 'Hello! My name ' + name2 + ' and I am ' + age + '.';
+console.log(concatenationGreeting); // 'Hello! My name is John and I am 30.'
+
+//интерполяция
+let interpolationGreeting = `Hello! My name is ${name2} and I am ${age}.`;
+console.log(interpolationGreeting);*/ // 'Hello! My name is John and I am 30.'
+
+//В большинстве случаев интерполирование более наглядно, поэтому ее используют гораздо чаще.
