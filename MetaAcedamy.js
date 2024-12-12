@@ -77,3 +77,35 @@ console.log(getArraysSum([], []));
 combineArrays([1, 2, 5], [3, 6, 1]); // [4, 8, 6]
 combineArrays([1], [6]); // [7]
 combineArrays([], []); // [] */
+
+
+function combineArrays(first, second) {
+  let result = [];
+    if(first.length === second.length) {
+      for (let i = 0; i < first.length; i++) {
+        result.push(first[i] + second[i]); 
+      }
+    }
+
+    if(first.length !== second.length) {
+      return false;
+    }
+  
+
+  return result;
+}
+
+
+console.log(combineArrays([1, 2, 5], [3, 6, 1])); // [4, 8, 6]
+console.log(combineArrays([1], [6])); // [7]
+console.log(combineArrays([], [])); // []
+
+
+/* Double Power: Напиши функцию doublePower, которая: принимает массив мощностей currentPowers;
+возвращает новый массив с удвоенными значениями из currentPowers.
+Если currentPowers пуст, то функция должна вернуть пустой массив. Например:
+doublePower([100, 150, 200, 220]); // [200, 300, 400, 440]
+doublePower([45, 34, 56, 67]); // [90, 68, 112, 134]
+doublePower([]); // [] */
+
+
