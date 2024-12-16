@@ -142,12 +142,9 @@ makeStickers(0, 'Foot'); // []*/
 function makeStickers(detailsCount, robotPart) {
   let result = [];
 
-
   for (let i = 1; i <= detailsCount; i++) {
     result.push(`${robotPart + ' detail #' + i}`);  
   }
-
-
 
   return result;
 }
