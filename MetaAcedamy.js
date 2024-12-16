@@ -109,3 +109,51 @@ doublePower([45, 34, 56, 67]); // [90, 68, 112, 134]
 doublePower([]); // [] */
 
 
+function doublePower(currentPowers) {
+  let result = [];
+
+    for (let i = 0; i < currentPowers.length; i++) {
+      result.push(currentPowers[i] * 2);
+    }
+
+    if(currentPowers === 0) {
+      return [];
+    }
+
+  return result;
+}
+
+
+console.log(doublePower([100, 150, 200, 220])); // [200, 300, 400, 440]
+console.log(doublePower([45, 34, 56, 67])); // [90, 68, 112, 134]
+console.log(doublePower([])); // []
+
+
+/* Make Stickers: Пора запускать массовое производство роботов 🤖 А чтобы работы на линии собирались правильно, их детали нужно маркировать.
+Напиши функцию makeStickers, которая:
+принимает число detailsCount и строку robotPart;
+возвращает массив строк в формате {{robotPart}} detail #{{n}}, например, Foot detail #1.
+Если detailsCount=0, то верни пустой массив. Например:
+makeStickers(3, 'Body'); // ['Body detail #1', 'Body detail #2', 'Body detail #3']
+makeStickers(4, 'Head'); // ['Head detail #1', 'Head detail #2', 'Head detail #3', 'Head detail #4']
+makeStickers(0, 'Foot'); // []*/
+
+
+function makeStickers(detailsCount, robotPart) {
+  let result = [];
+
+
+  for (let i = 1; i <= detailsCount; i++) {
+    result.push(`${robotPart + ' detail #' + i}`);  
+  }
+
+
+
+  return result;
+}
+
+
+console.log(makeStickers(3, 'Body')); // ['Body detail #1', 'Body detail #2', 'Body detail #3']
+console.log(makeStickers(4, 'Head')); // ['Head detail #1', 'Head detail #2', 'Head detail #3', 'Head detail #4']
+console.log(makeStickers(0, 'Foot')); // []
+
