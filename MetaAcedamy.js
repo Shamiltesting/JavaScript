@@ -154,3 +154,26 @@ console.log(makeStickers(3, 'Body')); // ['Body detail #1', 'Body detail #2', 'B
 console.log(makeStickers(4, 'Head')); // ['Head detail #1', 'Head detail #2', 'Head detail #3', 'Head detail #4']
 console.log(makeStickers(0, 'Foot')); // []
 
+
+/* Decrypt Message: Создай функцию decryptMessage, которая: принимает строчку message; 
+возвращает новую строчку, где символы из message расположены в обратном порядке.
+Например:
+// 'We like drinking tea!!!'
+decryptMessage('!!!aet gniknird ekil eW');
+
+// 'A coronavirus pandemic will be in 2020'
+decryptMessage('0202 ni eb lliw cimednap surivanoroc A');*/
+
+
+function decryptMessage(message) {
+  let string = '';
+
+  for (let i = message.length -1; i >= 0; i--) {
+    string += message[i];
+  }
+
+  return string;
+}
+
+console.log(decryptMessage('!!!aet gniknird ekil eW'));// 'We like drinking tea!!!'
+console.log(decryptMessage('0202 ni eb lliw cimednap surivanoroc A'));// 'A coronavirus pandemic will be in 2020'
