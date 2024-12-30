@@ -281,3 +281,31 @@ function getDrinksWithStep(numberOfGuests, step) {
   console.log(isSorted([])); // true
   console.log(isSorted([0, 3, 1, 2, 2, 2])); // false
   console.log(isSorted([1, 11, 2])); // false
+
+
+  /* Remove Vowels: Напишите функцию removeVowels, которая принимает строку doc и возвращает новую строку, где все громкие буквы удалены.
+  гласными буквами являются a, e, i, o, u, y, как маленькие так и большие. Например:
+  removeVowels('document'); // 'dcmnt'
+  removeVowels('I like my boss'); // ' lk m bss'
+  removeVowels('350 euro'); // '350 r'*/
+
+
+
+  function removeVowels(doc) {
+    let result = '';
+
+  
+    for(let i = 0; i < doc.length; i++) {
+      if(!'aeiouy'.includes(doc[i].toLowerCase())) {
+        result += doc[i];
+      }
+    }
+    
+  
+    return result;
+  }
+  
+  
+  console.log(removeVowels('document')); // 'dcmnt'
+  console.log(removeVowels('I like my boss')); // ' lk m bss'
+  console.log(removeVowels('350 euro')); // '350 r'
