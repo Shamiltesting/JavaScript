@@ -300,7 +300,7 @@ function getDrinksWithStep(numberOfGuests, step) {
         result += doc[i];
       }
     }
-    
+
   
     return result;
   }
@@ -309,3 +309,49 @@ function getDrinksWithStep(numberOfGuests, step) {
   console.log(removeVowels('document')); // 'dcmnt'
   console.log(removeVowels('I like my boss')); // ' lk m bss'
   console.log(removeVowels('350 euro')); // '350 r'
+
+
+  /* Compare Robots: Работы протестированы. Медленных мы отправили на апгрейд. Служба доставки Mate Post хочет купить у нас десяток роботов для перевозки груза по городу. 
+  А для этого им нужны работы, которые будут перевозить за день больше груза.Напиши функцию compareRobots, получающую два массива. 
+  Первый массив firstRobotResults – это вес грузов, перевозимых за день первым роботом, второй secondRobotResults – соответственно, вторым.
+  Проверь, кто из роботов может перевезти больше груза в день, и верни строчку с рекомендацией, кого из роботов стоит купить:
+  'First robot for sale!' - если первый робот перевозит больше груза;
+  'Second robot for sale!' - если второй робот перевозит больше груза;
+  'Both robots for sale!' - если оба работы перевозят одинаковое количество груза. Например:
+  compareRobots([12, 4, 13], [1, 1, 4, 5, 12]); // 'First robot for sale!' (29 > 23)
+  compareRobots([9, 7, 9], [1, 3, 4, 5, 12]); // 'Both robots for sale!' (25 = 25)
+  compareRobots([1, 3, 4], [1, 1, 4, 5]); // 'Second robot for sale!' (8 < 11)*/
+
+
+  function compareRobots(firstRobotResults,secondRobotResults) {
+    let summRobot1 = 0;
+    let summRobot2 = 0;
+  
+    for (let i = 0; i < firstRobotResults.length; i++) {
+        summRobot1 += firstRobotResults[i];    
+    }
+  
+  
+    for (let i = 0; i < secondRobotResults.length; i++) {
+      summRobot2 += secondRobotResults[i]; 
+    }
+  
+    if (summRobot1 > summRobot2) {
+      return 'First robot for sale!';
+    }
+    else if (summRobot1 === summRobot2) {
+      return 'Both robots for sale!';
+    }
+    else {
+      return 'Second robot for sale!';
+    }
+  
+    //return summRobot1;
+    //return summRobot2;
+  
+  }
+  
+  
+  console.log(compareRobots([12, 4, 13], [1, 1, 4, 5, 12])); // 'First robot for sale!' (29 > 23)
+  console.log(compareRobots([9, 7, 9], [1, 3, 4, 5, 12])); // 'Both robots for sale!' (25 = 25)
+  console.log(compareRobots([1, 3, 4], [1, 1, 4, 5])); // 'Second robot for sale!' (8 < 11)
