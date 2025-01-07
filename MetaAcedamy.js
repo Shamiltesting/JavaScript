@@ -355,3 +355,53 @@ function getDrinksWithStep(numberOfGuests, step) {
   console.log(compareRobots([12, 4, 13], [1, 1, 4, 5, 12])); // 'First robot for sale!' (29 > 23)
   console.log(compareRobots([9, 7, 9], [1, 3, 4, 5, 12])); // 'Both robots for sale!' (25 = 25)
   console.log(compareRobots([1, 3, 4], [1, 1, 4, 5])); // 'Second robot for sale!' (8 < 11)
+
+
+  /* Get Location: Усложняем работу нашего робота! Теперь он умеет превращать команды движения в 
+  правильный сигнал и двигаться в соответствии с ним:
+  'forward' означает y+1 (шаг вперед);
+  'back' означает y – 1 (шаг назад);
+  'right' означает x+1 (шаг вправо);
+  'left' означает x – 1 (шаг слева).
+  Но было бы здорово, чтобы робот знал, где он находится даже без GPS. 
+  Для этого реализуй функцию getLocation, принимающую 2 параметра:
+  массив начальных координат coordinates в виде [x, y];
+  массив с командами commands в виде ['command1', 'command2', 'command3'...].
+  Функция должна возвращать массив конечных координат [x, y] после движений согласно командам из массива commands.
+  Например, у нас есть массив с координатами coordinates = [2, 1] и массив с командами commands = ['left', 'back', 'back']:
+  координаты после первой команды – [1, 1] (1 шаг слева);
+  координаты после второй команды - [1, 0] (1 шаг назад);
+  координаты после третьей команды - [1, -1] (1 шаг назад);
+  результатом будет являться массив [1, -1].
+  Другие примеры:
+  getLocation([0, 0], ['forward', 'right']); // [1, 1]
+  getLocation([2, 3], ['back', 'back', 'back', 'right']); // [3, 0]
+  getLocation([0, 5], ['back', 'back', 'back', 'right', 'left', 'forward']); // [0, 3]*/
+
+
+  function getLocation(coordinates, commands) {
+    let [x, y] = coordinates;
+
+    for (let i = 0; i < commands.length; i++) {
+            if(commands[i] === 'right') {
+                x += 1;
+            }
+            else if(commands[i] === 'left') {
+                x -= 1;
+            }
+            else if(commands[i] === 'forward') {
+                y += 1;
+            }
+            else {
+                y -= 1;
+            }
+    }
+
+
+    return [x, y];
+}
+
+
+console.log(getLocation([0, 0], ['forward', 'right'])); // [1, 1]
+console.log(getLocation([2, 3], ['back', 'back', 'back', 'right'])); // [3, 0]
+console.log(getLocation([0, 5], ['back', 'back', 'back', 'right', 'left', 'forward'])); // [0, 3]
