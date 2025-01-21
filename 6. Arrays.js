@@ -219,3 +219,91 @@ console.log("The \"array\" will be without firts element: " + array + "\nThat wi
 var array = [44, "string", false];
 var newArray = array.unshift(1, 2);
 console.log("That what include the \"array\": " + array + "\nhow many elements in \"newArray\": " + newArray);
+
+//Метод splice, используется для изменения содержимого массива: вставка, удаление и замена элементов.
+//Вырезать кусочек из середины массива
+var array = [1, 2, 3, 4, 5];
+console.log("In begin array include: " + array);
+var newArr = array.splice(1,2);//забираем с массива элементы с индексом 1 и 2  
+console.log("new array include: " + newArr + "\nold array after splice include: " + array);
+
+
+//Можем вставить в середину кусочек
+var array = [1, 2, 3, 4, 5];
+console.log("Before splice the array include: " + array);
+var newArr = array.splice(3, 0, "a", "b");//новые элементы "a" и "b" будут вставлятся в середину начиная с 3го индекса
+console.log("New array include: " + newArr + "\nAfter splice array include: " + array);
+
+//Можно вырезать и вставить
+var array = [1, 2, 3, 4, 5];
+console.log("Before splice the array include: " + array);
+var newArr = array.splice(1, 2, "a", "b");//забрали элменты с индексом 1 и 2, вставили "a" и "b"
+console.log("New array include: " + newArr + "\nAfter splice array include: " + array);
+
+
+//Используем метод forEach c функцией
+var array = [5, 8, 10, 22];
+array.forEach(function(v) {
+    console.log(v * 2)
+});
+console.log(array);
+
+
+//Стрелочная функция тоже доступна
+var array = [1, 10, 5, 8];
+array[7] = 40;//добавили в массив элемент под индексом 7
+array.forEach((v) => {
+    console.log(v * 2)
+});
+console.log(array);
+
+
+//Это нам доступно и через цикл 
+var array = [1, 10, 5, 8];
+array[7] = 40;
+
+for(let i = 0; i < array.length; i++) {
+    console.log(array[i] * 2)
+};
+console.log(array);
+
+
+//Благодоря map() создаем новый массив исходя из уже существуещего
+var array = [1, 8, 5, 4];
+var elementsX2Array = array.map(function(v) {
+    return v * 2
+});
+console.log(array);
+console.log(elementsX2Array);   
+
+
+//Полная перечень аргументов
+var array = [5, 7, 3, 8];
+var newArr = array.map(function (item, i, array) {
+    //console.log(array);//изначальный массив
+    //console.log(i);//итерации
+    return ' ' + i + ' : ' + (item * 10)
+});
+console.log("array " + array);
+console.log("newArray " + newArr);
+
+
+//Фильтрация массива
+var array = [5, 7, 3, 8];
+var afterFilter = array.filter(checker);
+console.log(array);
+console.log(afterFilter);
+
+function checker(item) {
+    return item < 8
+};
+
+
+//Проверка every и some
+var array = [5, 7, 5, -4, 1];
+console.log("Is EVERY element positive: " + array.every(checker));
+console.log("Is SOME element positive: " + array.some(checker));
+
+function checker(item) {
+    return item > 0
+};
