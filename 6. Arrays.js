@@ -305,5 +305,75 @@ console.log("Is EVERY element positive: " + array.every(checker));
 console.log("Is SOME element positive: " + array.some(checker));
 
 function checker(item) {
-    return item > 0
-};
+    return item > 0;
+}
+
+//reduce- "свертывание" массива, вычисление с сохранением промежуточного результата
+var arr = [1, 2, 3, 4, 5];
+var res = arr.reduce(myAction);
+//var res = arr.reduce(myAction, 12); // "стартове" значення
+//var res = arr.reduce(myAction, 0);
+//var res = arr.reduceRight(myAction, 0);
+
+console.log("+++++++\n " + res);
+
+function myAction(accumulator, currentValue, index, array) {
+    console.log("----\n" + "now accumulator = " + accumulator);
+    console.log("array[" + index + "] = " + currentValue);
+    return accumulator + currentValue;
+}
+
+//Или когда сумма массива с непарными числами:
+var arr = [1, 2, 3, 4, 5];
+var res = arr.reduce(myAction);
+
+console.log("+++++++\nresult = " + res);
+
+function myAction(accumulator, currentValue, index, array) {
+    console.log("-----\n" + "accumulator = " + accumulator);
+    console.log("array[" + index + "] = " + currentValue); 
+    accumulator = (currentValue % 2 !== 0) ? accumulator + currentValue: accumulator;
+    return accumulator;
+}
+
+
+//Еще одна интересная штука про массив
+function sum(a, b) {
+    return a + b;
+}
+console.log(sum(1, 6));
+
+//Как я могу узнать, что в массиве больше элеменитов чем мне надо
+function sum(a, b) {
+    let arg = arguments;
+    console.log("Объект arguments: ", arg)
+    console.log("Первый элемент в массиве = " + arg[0]);
+    console.log("arguments это массив " + Array.isArray(arg));
+    return a + b;
+}
+console.log(sum(2, 5, 8));
+
+
+//Еще про один метод массива Array.from
+function sum(a, b) {
+    var arg = Array.from(arguments);
+    console.log("Объект arguments: ", arg)
+    console.log("Первый элемент в массиве = " + arg[0]);
+    console.log("arguments это массив " + Array.isArray(arg));
+    return a + b;
+}
+console.log(sum(2, 5, 8));
+
+
+//Eще один пример Array.from
+var str = "Hello";
+var charArray = Array.from(str);
+console.log(charArray);
+
+
+//Превычное для нас
+var arr = [1, 2, 3, 4, 5];
+var doubledNumbers = Array.from(arr, function (n) {
+    return n * 2
+});
+console.log(doubledNumbers);
