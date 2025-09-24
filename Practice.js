@@ -197,3 +197,19 @@ seriaA.getInfo();
 seriaA.city = "Milan"
 console.log("appear data after added new property:");
 seriaA.getInfo();
+
+
+
+/*Задача 11: Подсчет частоты слов:
+Напиши функцию countWords(text), которая принимает строку и возвращает объект, где ключи — это слова, а значения — количество раз, сколько это слово встречается.*/
+
+function sumArr(numbers) {
+  let sum = 0;
+  for(let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+     return sum;
+}
+
+let digits = [1, 5, 10, 41, 6];
+console.log(sumArr(digits));
